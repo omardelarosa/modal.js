@@ -1,17 +1,13 @@
 module.exports = tasks
 
-var jadeify = require('jadeify2')
-  , join = require('path').join
-  , fs = require('fs')
+var fs = require('fs')
+  , Handlebars = require('handlebars')
 
 function tasks(pliers) {
 
-  pliers('build', function () {
+  pliers('build', function (done) {
 
-    var readStream = fs.createReadStream(join(__dirname, 'modal-template.jade'))
-      , writeSteam = fs.createWriteStream(join(__dirname, 'modal-template.js'))
-
-    readStream.pipe(jadeify(join(__dirname, 'modal-template.jade'))).pipe(writeSteam)
+    pliers.exec('./node_modules/.bin/handlebars ./modal-template.hbs -f ./modal-template.js -c handlebars', done)
 
   })
 

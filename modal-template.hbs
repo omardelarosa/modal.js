@@ -1,0 +1,17 @@
+<div class="modal-overlay">
+  <div class="modal-content js-modal">
+  {{#if title}}
+    <h1 class='modal-title'>{{title}}</h1>
+  {{/if}}
+  <div class="js-content">
+
+  </div>
+  {{#if buttons.length}}
+    <div class="modal-controls">
+      {{#each buttons}}
+        <button class="btn js-button {{this.className}}">{{this.text}}</button>
+      {{/each}}
+    </div>
+  {{/if}}
+  </div>
+</div>

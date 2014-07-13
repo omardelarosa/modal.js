@@ -13,10 +13,9 @@
   "author": "Ben Gourley",
   "license": "BSD",
   "devDependencies": {
-    "jade": "~0.28.1",
+    "handlebars": "*",
     "jsdom": "~0.5.0",
     "mocha": "~1.8.1",
-    "jadeify2": "0.0.3",
     "jquery": "~1.8.3"
   }
 }
